@@ -1,0 +1,67 @@
+# Compiled binaries and executables
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+dist/
+bin/
+.build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.clangd/
+
+# CMake build files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.user
+
+# Debug files
+*.dSYM/
+*.su
+*.gch
+*.pch
+*.stackdump
+
+# Dependency files
+*.d
+*.dep
+
+# Test outputs
+test_output/
+*.test
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# OS specific
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Node modules (if using Node tools)
+node_modules/
+npm-debug.log
