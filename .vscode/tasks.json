@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: 生成活动文件",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-std=c++17",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "C++: 生成所有文件",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-std=c++17",
+                "${workspaceFolder}/src/**/*.cpp",
+                "-o",
+                "${workspaceFolder}/build/output.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "C++: 运行活动文件",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "test",
+            "dependsOn": "C++: 生成活动文件",
+            "isBackground": false
+        },
+        {
+            "label": "C++: 清理构建",
+            "type": "shell",
+            "command": "PowerShell",
+            "args": [
+                "-Command",
+                "Get-ChildItem -Path '${workspaceFolder}' -Include '*.exe' -Recurse | Remove-Item"
+            ],
+            "group": "build"
+        }
+    ]
+}
